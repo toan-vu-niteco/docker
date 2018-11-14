@@ -68,8 +68,16 @@ RUN set -ex; \
 COPY etc /etc/
 COPY php.ini /usr/local/etc/php/conf.d/php-phpmyadmin.ini
 
+
 # Copy main script
 COPY run.sh /run.sh
+
+#For openshift permission
+RUN chgrp -R 0 /etc &&  chmod -R g=u /etc
+
+RUN chgrp -R 0 /var &&  chmod -R g=u /var 
+
+RUN chmod +x run.sh
 
 # We expose phpMyAdmin on port 80
 EXPOSE 80
