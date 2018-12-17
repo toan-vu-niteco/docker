@@ -77,6 +77,8 @@ RUN chgrp -R 0 /etc &&  chmod -R g=u /etc
 
 RUN chgrp -R 0 /var &&  chmod -R g=u /var 
 
+RUN chgrp -R 0 /usr &&  chmod -R g=u /usr 
+
 RUN chmod +x /run.sh
 
 # We expose phpMyAdmin on port 80
