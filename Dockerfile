@@ -81,6 +81,9 @@ RUN chgrp -R 0 /usr &&  chmod -R g=u /usr
 
 RUN chmod +x /run.sh
 
+RUN mkdir -p /var/nginx/client_body_temp
+RUN mkdir -p /var/run/php/
+
 # We expose phpMyAdmin on port 80
 EXPOSE 80
 
